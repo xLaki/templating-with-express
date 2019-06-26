@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 
-app.get('/', function(request, response){
+app.get('/', function(req, res){
     console.log('bruh moment');
-    response.send('bruhh');
+    res.send('bruhh');
 });
 
-app.listen(3000);
-console.log('Server is live, and so is your fat ugly body.');
+app.listen(3000, function(err){
+    if (err){
+        console.log(err);
+    };
+});
